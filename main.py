@@ -50,7 +50,6 @@ for file in getFiles:
     },
   ])
 # 'content': 'Describe thoroughly of the image.',
-# 'content': 'Write a seven (7) paragraph of extreme erotic and sexual smut about this photo. Starts with buildup, followed by climax, and finally resolution. Having character dialogue with obscene, profanity, and vulgar language is a plus. \nAt climax, include the line "Ah, I\'m boutta cum!" and \'A strong white liquid squirts from his flashing red large size penis.\'',
 
 llavastatement = response['message']['content']
 theprompt = r'''
