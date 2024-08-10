@@ -1,5 +1,4 @@
 import ollama
-from time import sleep
 from filesIngest import filesIngest
 from raw import convert2raw
 
@@ -36,6 +35,7 @@ def clear_terminal():
         # Fallback for other operating systems
         print('\n' * 100)
 
+clear_terminal()
 
 selectFiles = filesIngest.select_files()
 getFiles = filesIngest.getFileList()
@@ -49,31 +49,8 @@ for file in getFiles:
       'images': [file],
     },
   ])
-# 'content': 'Describe thoroughly of the image.',
 
-llavastatement = response['message']['content']
-theprompt = r'''
-From this short story: 
+  llavastatement = response['message']['content']
 
-'''+llavastatement+r''' 
-
-
-
-Make a title for this short story. Just write the title, don't recommend me anything.
-'''
-# Extract as many keywords from the passage, separated by commas. Do not write in bullet points
-
-# print('\n\n',theprompt)
-
-
-
-
-
-# response2 = ollama.generate(model='gemma2:2b', prompt = theprompt)
-
-
-
-# print('\n\n','====================\n', response2['response'], '====================\n')
-clear_terminal()
-print(llavastatement)
-print('\n=========== THE END ===========')
+  print('\n=========== '+ file +' ===========')
+  print(llavastatement)
